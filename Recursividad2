@@ -1,0 +1,124 @@
+package recursividad2;
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author dazz
+ */
+public class Recursividad2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+     Scanner leer = new Scanner (System.in);
+        boolean continuar =true;
+        int opcion = 0;
+        int serie=9, num1=0, num2= 1,resultado=1;
+        
+        
+        
+        
+        
+        while (continuar){
+            System.out.println("-----------MENU----------");
+            System.out.println("ELIGE UNA OPCION "
+                    + "\n [1]SERIE FIBONACCI  "
+                    + "\n [2]NUMEROS DEL 1 AL 10  "
+                    + "\n [3]FACTORIAL  "
+                    + "\n [4]DESAPARECER NUMEROS  "
+                    + "\n [5]SALIR");
+            opcion = leer.nextInt();
+        
+        
+        switch (opcion) {
+            case 1:
+                //RECURSIVIDAD
+                int valor;
+               System.out.println("introduce un numero:");
+                valor= leer.nextInt();
+               System.out.println("El resultado es :" + fibonacci (valor));
+               
+        
+                break;
+                
+            case 2:
+                
+                 numeros(10);
+                 
+                break;
+            case 3:
+  
+               System.out.println("introduce un numero:");
+               int num= leer.nextInt();
+               System.out.println("\n El factorial de" + num + "es:" + factorial(num));
+               
+                break;
+             
+            case 4:
+                //DESAPARECER
+                
+                System.out.println("");
+                for (int i=10; i>=0; i--){ 
+                
+                desaparecer(i);
+                //if (desaparecer =0){
+                }
+              //  }
+                //int size= desaparecer.size();
+               // for ( int i= 0; i<desaparecer.size(); i++ ){
+               // System.out.println(desaparecer.get(i));
+               // }
+                break;
+                
+            case 5:
+                continuar= false;
+                
+                break;
+        }
+    }
+    }    
+    
+
+    
+    private static int fibonacci(int valor){
+    if (valor>1)
+        return fibonacci(valor-1) + fibonacci (valor-2);
+    else if (valor ==1)
+        return 1;
+    else if (valor == 0)
+        return 0;
+        return 0;
+    }
+    
+    private static void numeros (int n){
+        if (n==0){
+            System.out.println("");
+        }
+        else {
+            System.out.println(n);
+            numeros(n-1);
+        }
+    }
+    private static int factorial (int num){
+        if (num < 2){
+            return 1;
+        }
+        else {
+            return num * factorial(num-1);
+            }
+    }
+    
+    public static void desaparecer (int des){
+        if (des> -1){
+            System.out.println(des + "");
+            desaparecer (des-1);
+        }
+        else {
+        System.out.println("");
+    }
+        }
+    }
+    
